@@ -1,4 +1,7 @@
-import Shape.*
+package days
+
+import days.Shape.*
+import readInput
 
 enum class Shape(val symbols: List<Char>, val value: Int) {
     ROCK(listOf('A', 'X'), 1),
@@ -39,7 +42,7 @@ enum class ExpectedOutcome(val symbol: Char, val value: Int) {
     }
 }
 
-fun getScoreForExpectedOutcome(opponentShape: Shape, expectedOutcome: ExpectedOutcome) = when(expectedOutcome){
+fun getScoreForExpectedOutcome(opponentShape: Shape, expectedOutcome: ExpectedOutcome) = when (expectedOutcome) {
     ExpectedOutcome.WIN -> opponentShape.losesOver().value
     ExpectedOutcome.DRAW -> opponentShape.value
     ExpectedOutcome.LOSE -> opponentShape.winsOver().value
@@ -61,7 +64,10 @@ fun main() {
         var score = 0
         input.forEach { line ->
             val roundValues = line.split(" ").map { it.first() }
-            score += getScoreForExpectedOutcome(Shape.parseChar(roundValues[0]), ExpectedOutcome.parseChar(roundValues[1]))
+            score += getScoreForExpectedOutcome(
+                Shape.parseChar(roundValues[0]),
+                ExpectedOutcome.parseChar(roundValues[1])
+            )
         }
         return score
     }

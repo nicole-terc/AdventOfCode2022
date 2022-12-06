@@ -1,3 +1,7 @@
+package days
+
+import readInput
+
 fun main() {
 
     fun part1(input: List<String>): Int {
@@ -5,7 +9,7 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-       return input.size
+        return input.size
     }
 
     // test if implementation meets criteria from the description, like:
