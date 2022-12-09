@@ -23,13 +23,13 @@ open class Day08(
         var right: Int = 0,
     )
 
-    @Setup
+    //    @Setup
     fun setup() {
         val stringInput = readInput(if (useTestData) "Day08_test" else "Day08")
         input = stringInput.map { line -> line.toCharArray().map { it.digitToInt() } }
     }
 
-    @Benchmark
+    //    @Benchmark
     fun part1(): Int {
         val visibleTrees: List<MutableList<Boolean>> = List(input.size) { MutableList(input[0].size) { false } }
         val maxHeights: List<MutableList<MaxHeights>> = List(input.size) { MutableList(input[0].size) { MaxHeights() } }
@@ -100,7 +100,7 @@ open class Day08(
             get() = top * bottom * left * right
     }
 
-    @Benchmark
+    //    @Benchmark
     fun part2(): Int {
         val scores = List(input.size) { MutableList(input[0].size) { ScenicScore() } }
 
