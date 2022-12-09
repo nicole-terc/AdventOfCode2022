@@ -15,7 +15,7 @@ open class Day01(
 ) {
     private var input: List<String> = emptyList()
 
-    @Setup
+//    @Setup
     fun setup() {
         input = readInput(if (useTestData) "Day01_test" else "Day01")
     }
@@ -35,13 +35,13 @@ open class Day01(
         return elvesSnacks
     }
 
-    @Benchmark
+//    @Benchmark
     fun part1(): Int {
         val elvesSnacks = createElvesSnacksList(input)
         return elvesSnacks.maxOf { it.sum() }
     }
 
-    @Benchmark
+//    @Benchmark
     fun part2(): Int {
         val elvesSnacks = createElvesSnacksList(input)
         return elvesSnacks.map { it.sum() }.sortedDescending().take(3).sum()

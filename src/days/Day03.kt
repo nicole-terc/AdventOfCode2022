@@ -14,7 +14,7 @@ open class Day03(
 ) {
     private var input: List<String> = emptyList()
 
-    @Setup
+//    @Setup
     fun setup() {
         input = readInput(if (useTestData) "Day03_test" else "Day03")
     }
@@ -26,7 +26,7 @@ open class Day03(
             this.code - 'A'.code + 27
         }
 
-    @Benchmark
+//    @Benchmark
     fun part1(): Int {
         var sum = 0
         input.forEach { ruckSack ->
@@ -52,7 +52,7 @@ open class Day03(
         return sum
     }
 
-    @Benchmark
+//    @Benchmark
     fun part2(): Int =
         input.chunked(3).sumOf { group ->
             val (one, two, three) = group
