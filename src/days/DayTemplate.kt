@@ -14,6 +14,8 @@ fun main() {
 
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day01_test")
+    println("TEST 1: " + part1(testInput))
+    println("TEST 2: " + part2(testInput))
     check(part1(testInput) == 1)
     check(part2(testInput) == 1)
 
