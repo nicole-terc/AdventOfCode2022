@@ -77,6 +77,26 @@ open class Day10(
         return signalStrength
     }
 
+    @Benchmark
+    fun part1cSequence(): Int {
+        var x = 1
+        var currentCycle = 1
+        val xSequence = mutableListOf<Int>()
+
+        input.forEach { instruction ->
+            xSequence.add(x)
+            currentCycle++
+
+            if (instruction != "noop") {
+                xSequence.add(x)
+                currentCycle++
+                x += instruction.substringAfter(" ").toInt()
+            }
+        }
+
+        return setOf(20, 60, 100, 140, 180, 220).sumOf { xSequence[it - 1] * it }
+    }
+
     // Part 2 - Option 1
     private fun printCRTValue(index: Int, x: Int) {
         val adjustedIndex = index % 40
@@ -170,6 +190,7 @@ fun main() {
         setup()
         check(part1() == 13140)
         check(part1b() == 13140)
+        check(part1cSequence() == 13140)
         val testPart2ResultArray =
             """
                 ##..##..##..##..##..##..##..##..##..##..
