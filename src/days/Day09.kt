@@ -40,7 +40,7 @@ open class Day09(
         }
     }
 
-    @Setup
+//    @Setup
     fun setup() {
         input = readInput(fileName).map { line ->
             line.split(" ").let { list ->
@@ -49,7 +49,7 @@ open class Day09(
         }
     }
 
-    @Benchmark
+//    @Benchmark
     fun part1(): Int {
         var headPosition = Position()
         var tailPosition = Position()
@@ -73,7 +73,7 @@ open class Day09(
         return tailPositionsVisited.size
     }
 
-    @Benchmark
+//    @Benchmark
     fun part2(): Int {
         val ropePositions = MutableList(10) { Position() }
         val tailPositionsVisited = mutableSetOf<Position>()
@@ -107,7 +107,7 @@ open class Day09(
         "L" to Position(-1, 0),
     )
 
-    @Benchmark
+//    @Benchmark
     fun part2b(): Int {
         val ropePositions = MutableList(10) { Position() }
         val tailPositionsVisited = mutableSetOf<Position>()
